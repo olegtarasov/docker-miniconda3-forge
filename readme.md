@@ -11,7 +11,7 @@ This image is designed to be used in production, so I try to keep its size minim
 Here is an example Dockerfile based on this image:
 
 ```Dockerfile
-FROM olegtarasov/miniconda3
+FROM olegtarasov/miniconda3-forge
 
 WORKDIR /usr/app
 
