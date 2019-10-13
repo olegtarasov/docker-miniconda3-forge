@@ -1,3 +1,7 @@
+![](https://github.com/olegtarasov/docker-miniconda3-forge/workflows/Docker%20Image%20CI/badge.svg)
+![](https://img.shields.io/microbadger/layers/olegtarasov/miniconda3-forge)
+![](https://img.shields.io/microbadger/image-size/olegtarasov/miniconda3-forge)
+
 # Miniconda 3
 
 This is a Docker image based on `debian:buster-slim` with updated Miniconda 3 and `conda-forge` channel activated in `strict` mode.
