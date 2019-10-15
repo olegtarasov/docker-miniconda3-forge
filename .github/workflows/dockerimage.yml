@@ -28,3 +28,5 @@ jobs:
       uses: joelwmale/webhook-action@master
       env:
         WEBHOOK_URL: https://hooks.microbadger.com/images/olegtarasov/miniconda3-forge/QR6qbulAsCrNEEjV__Xp1nU_eys=
+      with:
+        data: "{}"
