@@ -25,8 +25,6 @@ jobs:
         DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKERHUB_REPOSITORY: olegtarasov/miniconda3-forge
     - name: Update MicroBadger
-      uses: joelwmale/webhook-action@master
-      env:
-        WEBHOOK_URL: https://hooks.microbadger.com/images/olegtarasov/miniconda3-forge/QR6qbulAsCrNEEjV__Xp1nU_eys=
+      uses: wei/curl@v1
       with:
-        data: "{}"
+        args: -X POST https://hooks.microbadger.com/images/olegtarasov/miniconda3-forge/QR6qbulAsCrNEEjV__Xp1nU_eys=
