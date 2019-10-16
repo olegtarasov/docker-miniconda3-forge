@@ -19,12 +19,14 @@ FROM olegtarasov/miniconda3-forge
 
 WORKDIR /usr/app
 
-COPY . .
+COPY environment.yml .
 
-RUN conda env create -n my_env -f environment.yml && \
+RUN conda env create -n test -f environment.yml && \
     conda clean --all -y
 
-CMD ["/bin/bash", "-c", "eval \"$(conda shell.bash hook)\" && conda activate my_env && python my_script.py"]
+COPY . .
+
+CMD ["/bin/bash", "-l", "-c", "conda activate test && python test.py"]
 ``` 
 
-This dockerfile assumes that you have an exported environment definition in `environment.yml` and your script in `my_script.py`. This template creates a new environment based on your specification and cleans after itself. On startup it uses a trick with `eval "$(conda shell.bash hook)"` to activate the environment and run your script.
+This dockerfile assumes that you have an exported environment definition in `environment.yml` and your script in `test.py`. This template creates a new environment based on your specification and cleans after itself. On startup it activates the environment and runs your script.
